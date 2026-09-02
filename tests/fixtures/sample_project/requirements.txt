@@ -1,0 +1,8 @@
+# core deps
+requests>=2.31
+PyYAML>=6.0     # yaml config loading
+black==24.1.0
+-e ./local-pkg
+--index-url https://pypi.org/simple
+
+python-dateutil>=2.8; python_version >= "3.7"
