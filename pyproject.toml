@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "depdrift"
+version = "0.1.0"
+description = "Find phantom dependencies: declared-but-unused and imported-but-undeclared packages in a Python project."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Arnav Chawla" }]
+keywords = ["dependencies", "static-analysis", "linter", "requirements", "pyproject"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+depdrift = "depdrift.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["depdrift*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
